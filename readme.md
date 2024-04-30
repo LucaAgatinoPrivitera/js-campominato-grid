@@ -36,4 +36,6 @@ Hard: 49 (7x7)
 Ragionate bene su quando vi serve conoscere la selezione dell'utente: è in quel momento che dovrete recuperare il dato.
 
 Da chiedere:
+    query selector funziona solo se dopo ho append o anche con innerhtml?
+    riga 14 fuori dal loop
     Bonus 1, non riesco a far uscire la i e manco quadrato
