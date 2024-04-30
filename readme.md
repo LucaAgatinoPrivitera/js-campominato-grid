@@ -19,6 +19,7 @@ Aggiungete la gestione dell'evento di click, che stampi il numero e cambi il col
 
 MILESTONE #4
 Spostate alcuni elementi in funzioni, ad esempio la creazione del quadrato e/o l'event listener.
+
 :regalo: BONUS #1: CAPIRE LO SCOPE
 In milestone #3 stampate il numero, prendendolo dal contenuto della cella. Provate adesso a modificare il ciclo che crea le celle facendo in modo che le celle siano vuote. Come fate adesso a stampare qualcosa al click? Riesco a leggere qualcosa da scope superiori?
 
