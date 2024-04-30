@@ -19,6 +19,7 @@ for (let i = 1; i < 101; i++) {
 }
 */
 
+/*
 // MS-4
 let griglia = document.querySelector(".grid");
 
@@ -44,3 +45,53 @@ function creaQuadrato(i) {
     //return così viene conservato
     return quadrato;
 }
+*/
+
+
+// Bonus 1
+/*
+let griglia = document.querySelector(".grid");
+let i = 0;
+let quadrato = document.createElement("div");
+// griglia.innerHTML("ciao"); non mi funziona, perché va usato append da quello che ho capito
+for (i = 1; i < 101; i++) {
+    let quadrato = document.createElement("div");
+    griglia.append(quadrato)
+
+    quadrato.classList.add("square");
+    console.log("ciao");
+
+}
+quadrato.addEventListener("click", function (i) { //Per ricordarsi il valore lo metto qui, così lo prende
+    console.log("cliccato", this); //this indica proprio questo elemento
+    this.classList.toggle("clicked");
+    quadrato.innerText = i;
+})
+*/
+
+//Bonus 2
+button = document.getElementById("btn");
+button.addEventListener("click", function(){
+    let griglia = document.querySelector(".grid");
+
+    // griglia.innerHTML("ciao"); non mi funziona
+    for (let i = 1; i < 101; i++) {
+        let quadrato = creaQuadrato(i); //in questo caso quadrato non va in conflitto a causa dello scope
+        griglia.append(quadrato);  //Serve ad aggiungere il quadrato creato, altrimenti viene creato e rimane in un altro mondo
+    }
+    //Funzioni
+    function creaQuadrato(i) {
+        let quadrato = document.createElement("div");
+        quadrato.classList.add("square");
+        quadrato.innerText = i;
+    
+        // Event-listener click
+        quadrato.addEventListener("click", function () {
+            console.log("cliccato", this); //this indica proprio questo elemento i+1 ovviamente indica il numero dopo sul log
+            this.classList.toggle("clicked");
+        });
+    
+        //return così viene conservato
+        return quadrato;
+    }
+});

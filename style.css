@@ -29,3 +29,8 @@ body{
     background-color: black;
     color: white;
 }
+
+button{
+    margin: auto;
+    display: block;
+}
