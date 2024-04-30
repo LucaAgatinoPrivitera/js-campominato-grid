@@ -8,6 +8,11 @@ for (let i = 0; i < 100; i++) {
 
     quadrato.classList.add("square");
     quadrato.innerText = i;
-    console.log("ciao")
+    console.log("ciao");
 
+    //Ho i miei dubbi che vada messo qui, a causa del for, ma fuori dal loop non trova quadrato quindi It Just Works
+    quadrato.addEventListener("click", function () {
+        console.log("cliccato", this); //this indica proprio questo elemento
+        this.classList.toggle("clicked");
+    })
 }
