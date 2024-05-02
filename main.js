@@ -153,26 +153,6 @@ button.addEventListener("click", function () {
         let quadrato = creaQuadrato(i); //in questo caso quadrato non va in conflitto a causa dello scope
         griglia.append(quadrato);  //Serve ad aggiungere il quadrato creato, altrimenti viene creato e rimane in un altro mondo
     }
-    //Funzioni
-    function creaQuadrato(i) {
-        let quadrato = document.createElement("div");
-        quadrato.classList.add("square");
-
-        // Event-listener click
-        quadrato.addEventListener("click", function () {
-            console.log("cliccato", this); //this indica proprio questo elemento i+1 ovviamente indica il numero dopo sul log
-            this.classList.toggle("clicked");
-            if(quadrato.innerText == i){
-                quadrato.innerText = "";
-            }
-            else{
-                quadrato.innerText = i;
-            }
-        });
-
-        //return così viene conservato
-        return quadrato;
-    }
 });
 
 //Al click abbiamo la versione medium
@@ -185,26 +165,6 @@ buttonMed.addEventListener("click", function () {
     for (let i = 1; i < 82; i++) {
         let quadrato = creaQuadrato(i); //in questo caso quadrato non va in conflitto a causa dello scope
         griglia.append(quadrato);  //Serve ad aggiungere il quadrato creato, altrimenti viene creato e rimane in un altro mondo
-    }
-    //Funzioni
-    function creaQuadrato(i) {
-        let quadrato = document.createElement("div");
-        quadrato.classList.add("square");
-
-        // Event-listener click
-        quadrato.addEventListener("click", function () {
-            console.log("cliccato", this); //this indica proprio questo elemento i+1 ovviamente indica il numero dopo sul log
-            this.classList.toggle("clicked");
-            if(quadrato.innerText == i){
-                quadrato.innerText = "";
-            }
-            else{
-                quadrato.innerText = i;
-            }
-        });
-
-        //return così viene conservato
-        return quadrato;
     }
 });
 
@@ -219,24 +179,29 @@ buttonHard.addEventListener("click", function () {
         let quadrato = creaQuadrato(i); //in questo caso quadrato non va in conflitto a causa dello scope
         griglia.append(quadrato);  //Serve ad aggiungere il quadrato creato, altrimenti viene creato e rimane in un altro mondo
     }
-    //Funzioni
-    function creaQuadrato(i) {
-        let quadrato = document.createElement("div");
-        quadrato.classList.add("square");
-
-        // Event-listener click
-        quadrato.addEventListener("click", function () {
-            console.log("cliccato", this); //this indica proprio questo elemento i+1 ovviamente indica il numero dopo sul log
-            this.classList.toggle("clicked");
-            if(quadrato.innerText == i){
-                quadrato.innerText = "";
-            }
-            else{
-                quadrato.innerText = i;
-            }
-        });
-
-        //return così viene conservato
-        return quadrato;
-    }
 });
+
+
+
+
+
+//Funzioni questo prima era messo prima di ogni griglia.append(quadrato);
+function creaQuadrato(i) {
+    let quadrato = document.createElement("div");
+    quadrato.classList.add("square");
+
+    // Event-listener click
+    quadrato.addEventListener("click", function () {
+        console.log("cliccato", this); //this indica proprio questo elemento i+1 ovviamente indica il numero dopo sul log
+        this.classList.toggle("clicked");
+        if (quadrato.innerText == i) {
+            quadrato.innerText = "";
+        }
+        else {
+            quadrato.innerText = i;
+        }
+    });
+
+    //return così viene conservato
+    return quadrato;
+}
