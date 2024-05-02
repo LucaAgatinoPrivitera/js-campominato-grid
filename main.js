@@ -49,7 +49,7 @@ function creaQuadrato(i) {
 
 
 // Bonus 1
-
+/*
 let griglia = document.querySelector(".grid");
 let quadrato = document.createElement("div");
 // griglia.innerHTML("ciao"); non mi funziona, perché va usato append da quello che ho capito
@@ -66,7 +66,7 @@ for (let i = 1; i < 101; i++) {
         quadrato.innerText = i;
     })
 }
-
+*/
 
 
 //Bonus 2
@@ -97,3 +97,129 @@ button.addEventListener("click", function(){
     }
 });
 */
+
+
+
+//Bonus 3
+
+//Col change
+/*
+button = document.getElementById("opzione");
+button.addEventListener("change", function(){
+    let griglia = document.querySelector(".grid");
+
+    // griglia.innerHTML("ciao"); non mi funziona
+    for (let i = 1; i < 101; i++) {
+        let quadrato = creaQuadrato(i); //in questo caso quadrato non va in conflitto a causa dello scope
+        griglia.append(quadrato);  //Serve ad aggiungere il quadrato creato, altrimenti viene creato e rimane in un altro mondo
+    }
+    //Funzioni
+    function creaQuadrato(i) {
+        let quadrato = document.createElement("div");
+        quadrato.classList.add("square");
+        quadrato.innerText = i;
+    
+        // Event-listener click
+        quadrato.addEventListener("click", function () {
+            console.log("cliccato", this); //this indica proprio questo elemento i+1 ovviamente indica il numero dopo sul log
+            this.classList.toggle("clicked");
+        });
+    
+        //return così viene conservato
+        return quadrato;
+    }
+});
+*/
+
+
+
+let button = document.getElementById("btn");
+let buttonMed = document.getElementById("btn_med");
+let buttonHard = document.getElementById("btn_hard");
+
+//La griglia la inizializzo qui, altrimenti mi creava un problema
+let griglia = document.querySelector(".grid");
+
+//Al click abbiamo la versione facile
+button.addEventListener("click", function(){
+    griglia.classList.remove("grid", "grid_med", "grid_hard");
+    griglia.classList.add("grid");
+    griglia.innerHTML=" ";
+
+    // griglia.innerHTML("ciao"); non mi funziona
+    for (let i = 1; i < 101; i++) {
+        let quadrato = creaQuadrato(i); //in questo caso quadrato non va in conflitto a causa dello scope
+        griglia.append(quadrato);  //Serve ad aggiungere il quadrato creato, altrimenti viene creato e rimane in un altro mondo
+    }
+    //Funzioni
+    function creaQuadrato(i) {
+        let quadrato = document.createElement("div");
+        quadrato.classList.add("square");
+        quadrato.innerText = i;
+    
+        // Event-listener click
+        quadrato.addEventListener("click", function () {
+            console.log("cliccato", this); //this indica proprio questo elemento i+1 ovviamente indica il numero dopo sul log
+            this.classList.toggle("clicked");
+        });
+    
+        //return così viene conservato
+        return quadrato;
+    }
+});
+
+//Al click abbiamo la versione medium
+buttonMed.addEventListener("click", function(){
+    griglia.classList.remove("grid", "grid_med", "grid_hard");
+    griglia.classList.add("grid_med");
+    griglia.innerHTML=" ";
+
+    // griglia.innerHTML("ciao"); non mi funziona
+    for (let i = 1; i < 82; i++) {
+        let quadrato = creaQuadrato(i); //in questo caso quadrato non va in conflitto a causa dello scope
+        griglia.append(quadrato);  //Serve ad aggiungere il quadrato creato, altrimenti viene creato e rimane in un altro mondo
+    }
+    //Funzioni
+    function creaQuadrato(i) {
+        let quadrato = document.createElement("div");
+        quadrato.classList.add("square");
+        quadrato.innerText = i;
+    
+        // Event-listener click
+        quadrato.addEventListener("click", function () {
+            console.log("cliccato", this); //this indica proprio questo elemento i+1 ovviamente indica il numero dopo sul log
+            this.classList.toggle("clicked");
+        });
+    
+        //return così viene conservato
+        return quadrato;
+    }
+});
+
+//Al click abbiamo la versione hard
+buttonHard.addEventListener("click", function(){
+    griglia.classList.remove("grid", "grid_med", "grid_hard");
+    griglia.classList.add("grid_hard");
+    griglia.innerHTML=" ";
+
+    // griglia.innerHTML("ciao"); non mi funziona
+    for (let i = 1; i < 50; i++) {
+        let quadrato = creaQuadrato(i); //in questo caso quadrato non va in conflitto a causa dello scope
+        griglia.append(quadrato);  //Serve ad aggiungere il quadrato creato, altrimenti viene creato e rimane in un altro mondo
+    }
+    //Funzioni
+    function creaQuadrato(i) {
+        let quadrato = document.createElement("div");
+        quadrato.classList.add("square");
+        quadrato.innerText = i;
+    
+        // Event-listener click
+        quadrato.addEventListener("click", function () {
+            console.log("cliccato", this); //this indica proprio questo elemento i+1 ovviamente indica il numero dopo sul log
+            this.classList.toggle("clicked");
+        });
+    
+        //return così viene conservato
+        return quadrato;
+    }
+});
