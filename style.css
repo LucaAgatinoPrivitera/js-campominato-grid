@@ -34,6 +34,10 @@ body {
     background-color: black;
     color: white;
 }
+.clicked_defeat{
+    background-color: red;
+    color: white;
+}
 
 
 

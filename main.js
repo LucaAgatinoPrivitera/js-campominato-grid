@@ -185,6 +185,75 @@ buttonHard.addEventListener("click", function () {
 
 
 
+
+
+let buttonSelect = document.getElementById("btn_select");
+let select = document.getElementById("opzione").value;
+
+
+let prova = document.getElementById('opzione').addEventListener('change', function () {
+    console.log('You selected: ', this.value);
+    buttonSelect.value = this.value;
+});
+
+
+buttonSelect.addEventListener("click", function () {
+    console.log(buttonSelect.value)
+    if (buttonSelect.value == "Facile") {
+        griglia.classList.remove("grid", "grid_med", "grid_hard");
+        griglia.classList.add("grid");
+        griglia.innerHTML = " ";
+
+        // griglia.innerHTML("ciao"); non mi funziona
+        for (let i = 1; i < 101; i++) {
+            let quadrato = creaQuadrato(i); //in questo caso quadrato non va in conflitto a causa dello scope
+            griglia.append(quadrato);  //Serve ad aggiungere il quadrato creato, altrimenti viene creato e rimane in un altro mondo
+        }
+    }
+
+    if (buttonSelect.value == "Medio") {
+        griglia.classList.remove("grid", "grid_med", "grid_hard");
+        griglia.classList.add("grid_med");
+        griglia.innerHTML = " ";
+
+        // griglia.innerHTML("ciao"); non mi funziona
+        for (let i = 1; i < 82; i++) {
+            let quadrato = creaQuadrato(i); //in questo caso quadrato non va in conflitto a causa dello scope
+            griglia.append(quadrato);  //Serve ad aggiungere il quadrato creato, altrimenti viene creato e rimane in un altro mondo
+        }
+    }
+
+    if (buttonSelect.value == "Difficile") {
+        griglia.classList.remove("grid", "grid_med", "grid_hard");
+        griglia.classList.add("grid_hard");
+        griglia.innerHTML = " ";
+
+        // griglia.innerHTML("ciao"); non mi funziona
+        for (let i = 1; i < 50; i++) {
+            let quadrato = creaQuadrato(i); //in questo caso quadrato non va in conflitto a causa dello scope
+            griglia.append(quadrato);  //Serve ad aggiungere il quadrato creato, altrimenti viene creato e rimane in un altro mondo
+        }
+    }
+
+});
+
+
+/*
+  let buttonSelect = document.getElementById("btn_select");
+// let select = document.getElementById("opzione").value;
+
+
+let select = document.getElementById('opzione').addEventListener('change', function() {
+    console.log('You selected: ', this.value);
+  });
+
+
+buttonSelect = select;
+*/
+
+
+
+
 //Funzioni questo prima era messo prima di ogni griglia.append(quadrato);
 function creaQuadrato(i) {
     let quadrato = document.createElement("div");
