@@ -49,27 +49,28 @@ function creaQuadrato(i) {
 
 
 // Bonus 1
-/*
+
 let griglia = document.querySelector(".grid");
-let i = 0;
 let quadrato = document.createElement("div");
 // griglia.innerHTML("ciao"); non mi funziona, perché va usato append da quello che ho capito
-for (i = 1; i < 101; i++) {
+for (let i = 1; i < 101; i++) {
     let quadrato = document.createElement("div");
     griglia.append(quadrato)
 
     quadrato.classList.add("square");
     console.log("ciao");
 
+    quadrato.addEventListener("click", function () { //Per ricordarsi il valore lo metto qui, così lo prende
+        console.log("cliccato", this); //this indica proprio questo elemento
+        this.classList.toggle("clicked");
+        quadrato.innerText = i;
+    })
 }
-quadrato.addEventListener("click", function (i) { //Per ricordarsi il valore lo metto qui, così lo prende
-    console.log("cliccato", this); //this indica proprio questo elemento
-    this.classList.toggle("clicked");
-    quadrato.innerText = i;
-})
-*/
+
+
 
 //Bonus 2
+/*
 button = document.getElementById("btn");
 button.addEventListener("click", function(){
     let griglia = document.querySelector(".grid");
@@ -95,3 +96,4 @@ button.addEventListener("click", function(){
         return quadrato;
     }
 });
+*/
