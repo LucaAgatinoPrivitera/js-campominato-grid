@@ -140,11 +140,13 @@ let buttonHard = document.getElementById("btn_hard");
 //La griglia la inizializzo qui, altrimenti mi creava un problema
 let griglia = document.querySelector(".grid");
 
+
+
 //Al click abbiamo la versione facile
-button.addEventListener("click", function(){
+button.addEventListener("click", function () {
     griglia.classList.remove("grid", "grid_med", "grid_hard");
     griglia.classList.add("grid");
-    griglia.innerHTML=" ";
+    griglia.innerHTML = " ";
 
     // griglia.innerHTML("ciao"); non mi funziona
     for (let i = 1; i < 101; i++) {
@@ -155,24 +157,29 @@ button.addEventListener("click", function(){
     function creaQuadrato(i) {
         let quadrato = document.createElement("div");
         quadrato.classList.add("square");
-        quadrato.innerText = i;
-    
+
         // Event-listener click
         quadrato.addEventListener("click", function () {
             console.log("cliccato", this); //this indica proprio questo elemento i+1 ovviamente indica il numero dopo sul log
             this.classList.toggle("clicked");
+            if(quadrato.innerText == i){
+                quadrato.innerText = "";
+            }
+            else{
+                quadrato.innerText = i;
+            }
         });
-    
+
         //return così viene conservato
         return quadrato;
     }
 });
 
 //Al click abbiamo la versione medium
-buttonMed.addEventListener("click", function(){
+buttonMed.addEventListener("click", function () {
     griglia.classList.remove("grid", "grid_med", "grid_hard");
     griglia.classList.add("grid_med");
-    griglia.innerHTML=" ";
+    griglia.innerHTML = " ";
 
     // griglia.innerHTML("ciao"); non mi funziona
     for (let i = 1; i < 82; i++) {
@@ -183,24 +190,29 @@ buttonMed.addEventListener("click", function(){
     function creaQuadrato(i) {
         let quadrato = document.createElement("div");
         quadrato.classList.add("square");
-        quadrato.innerText = i;
-    
+
         // Event-listener click
         quadrato.addEventListener("click", function () {
             console.log("cliccato", this); //this indica proprio questo elemento i+1 ovviamente indica il numero dopo sul log
             this.classList.toggle("clicked");
+            if(quadrato.innerText == i){
+                quadrato.innerText = "";
+            }
+            else{
+                quadrato.innerText = i;
+            }
         });
-    
+
         //return così viene conservato
         return quadrato;
     }
 });
 
 //Al click abbiamo la versione hard
-buttonHard.addEventListener("click", function(){
+buttonHard.addEventListener("click", function () {
     griglia.classList.remove("grid", "grid_med", "grid_hard");
     griglia.classList.add("grid_hard");
-    griglia.innerHTML=" ";
+    griglia.innerHTML = " ";
 
     // griglia.innerHTML("ciao"); non mi funziona
     for (let i = 1; i < 50; i++) {
@@ -211,14 +223,19 @@ buttonHard.addEventListener("click", function(){
     function creaQuadrato(i) {
         let quadrato = document.createElement("div");
         quadrato.classList.add("square");
-        quadrato.innerText = i;
-    
+
         // Event-listener click
         quadrato.addEventListener("click", function () {
             console.log("cliccato", this); //this indica proprio questo elemento i+1 ovviamente indica il numero dopo sul log
             this.classList.toggle("clicked");
+            if(quadrato.innerText == i){
+                quadrato.innerText = "";
+            }
+            else{
+                quadrato.innerText = i;
+            }
         });
-    
+
         //return così viene conservato
         return quadrato;
     }
