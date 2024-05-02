@@ -132,7 +132,7 @@ button.addEventListener("change", function(){
 */
 
 
-
+//Funzionamento con i bottoni
 let button = document.getElementById("btn");
 let buttonMed = document.getElementById("btn_med");
 let buttonHard = document.getElementById("btn_hard");
@@ -186,7 +186,7 @@ buttonHard.addEventListener("click", function () {
 
 
 
-
+//Funzionamento con il select
 let buttonSelect = document.getElementById("btn_select");
 let select = document.getElementById("opzione").value;
 
@@ -237,19 +237,6 @@ buttonSelect.addEventListener("click", function () {
 
 });
 
-
-/*
-  let buttonSelect = document.getElementById("btn_select");
-// let select = document.getElementById("opzione").value;
-
-
-let select = document.getElementById('opzione').addEventListener('change', function() {
-    console.log('You selected: ', this.value);
-  });
-
-
-buttonSelect = select;
-*/
 
 
 
